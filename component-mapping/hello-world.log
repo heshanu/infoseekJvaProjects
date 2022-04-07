@@ -1,0 +1,11 @@
+13:54:32,350 DEBUG SQL:109 - 
+    insert 
+    into
+        Person
+        (city, street, zipcode, name) 
+    values
+        (?, ?, ?, ?)
+13:54:32,360 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Seattle]
+13:54:32,361 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+13:54:32,361 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [85123]
+13:54:32,361 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]

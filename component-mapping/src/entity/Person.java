@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+//1to many relationship 
+
 @Entity
 public class Person {
 
@@ -26,7 +28,7 @@ public class Person {
 	private Long id;
 	*/
 	
-	@Column(nullable=false)
+	@Column(nullable=false,name="name")
 	private String name;
 	
 	@Embedded
