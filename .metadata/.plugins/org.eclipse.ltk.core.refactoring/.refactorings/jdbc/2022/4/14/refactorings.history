@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 packages to &apos;jdbcPostgre/src&apos;&#x0D;&#x0A;- Original project: &apos;jdbc&apos;&#x0D;&#x0A;- Destination element: &apos;jdbcPostgre/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     jdbc/src/jdbc.main&#x0D;&#x0A;     jdbc/src/jdbc.util&#x0D;&#x0A;     jdbc/src/jdbc.dto&#x0D;&#x0A;     jdbc/src/jdbc.service" description="Copy packages" destination="=jdbcPostgre/src" element1="/src&lt;jdbc.main" element2="/src&lt;jdbc.util" element3="/src&lt;jdbc.dto" element4="/src&lt;jdbc.service" flags="589830" fragments="4" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1648845246316" version="1.0"/>
+</session>

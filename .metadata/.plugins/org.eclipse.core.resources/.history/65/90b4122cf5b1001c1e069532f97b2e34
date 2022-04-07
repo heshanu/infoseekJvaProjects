@@ -1,0 +1,44 @@
+package jdbc.main;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import jdbc.dto.BankDTO;
+import jdbc.service.BankService;
+import jdbc.util.JDBCUtil;
+
+public class MainClass {
+	// Connection connection;
+	public static void main(String[] args) {
+		BankDTO bank1 = new BankDTO();
+		
+		bank1.setBankid(2L);
+		bank1.setCode("COM");
+		bank1.setName("commercial bank");
+		bank1.setStatus("A");
+
+		try {
+			BankService.updateBank(bank1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	
+	
+
+	public static void deleteBank() {
+	}
+
+	public static List<BankDTO> getAllBanka() {
+		return null;
+	}
+
+	public static List<BankDTO> getBanksByStatus(long bankId) {
+		return null;
+	}
+
+}

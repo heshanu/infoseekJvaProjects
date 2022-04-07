@@ -1,0 +1,28 @@
+package inheritance;
+
+public class Square extends Shape{
+	private int width;
+
+	public Square(String color,int width) {
+		super(color);
+		this.width=width;
+	}
+	@Override
+	public double calculateArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calculatePeremter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

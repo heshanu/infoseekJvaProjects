@@ -1,0 +1,5 @@
+package jdbc.dto;
+
+public class BankDTO {
+
+}

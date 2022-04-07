@@ -1,0 +1,7 @@
+package inheritance;
+
+public class Horse {
+	void run() {
+		System.out.println("Horse can run");
+	}
+}

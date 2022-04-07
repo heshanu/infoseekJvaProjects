@@ -1,0 +1,36 @@
+package jdbc.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import jdbc.dto.BankDTO;
+import jdbc.util.JDBCUtil;
+
+public class BankService {
+
+	public static void createBank(BankDTO bankDTO) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preset = null;
+
+		String insertSQL = "insert into banks(bankid,bankname,bankcode,status) values(?,?,?,?)";
+		try {
+			connection = JDBCUtil.getConnection();
+			connection.prepareStatement(insertSQL);
+			preset.setLong(1, bankDTO.getBankid());
+			preset.setString(2, bankDTO.getName());
+			preset.setString(3, bankDTO.getCode());
+			preset.setString(4, bankDTO.getStatus());
+
+			int returnValue = preset.executeUpdate();
+
+			System.out.println(returnValue);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			preset.close();
+			connection.close();
+		}
+
+	}
+}

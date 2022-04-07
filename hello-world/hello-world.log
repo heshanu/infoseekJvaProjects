@@ -1,0 +1,2 @@
+10:10:25,658 DEBUG SQL:109 - insert into message (TEXT) values (?)
+10:10:25,670 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations]

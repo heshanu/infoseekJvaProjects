@@ -1,0 +1,10 @@
+package inheritance;
+
+public class InheritanceMain {
+
+	public static void main(String[] args) {
+		Square sq=new Square("blue",10);
+		System.out.println(sq);
+	}
+
+}

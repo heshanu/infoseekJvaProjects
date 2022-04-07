@@ -1,0 +1,17 @@
+package jdbc.main;
+
+import java.sql.Connection;
+
+import jdbc.dto.BankDTO;
+
+public class MainClass {
+	// Connection connection;
+	public static void main(String[] args) {
+		BankDTO bank1 = new BankDTO();
+		bank1.setBankid(1L);
+		bank1.setCode("BOC");
+		bank1.setName("bank of ceylon");
+		bank1.setStatus("A");
+	}
+
+}

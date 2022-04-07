@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;jdbc.util.main&apos; to &apos;jdbc.main&apos;&#x0D;&#x0A;- Original project: &apos;jdbc&apos;&#x0D;&#x0A;- Original element: &apos;jdbc/src/jdbc.util.main&apos;&#x0D;&#x0A;- Renamed element: &apos;jdbc/src/jdbc.main&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;jdbc.util.main&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;jdbc.util.main" name="jdbc.main" qualified="false" references="true" stamp="1648766478934" textual="false" version="1.0"/>
+</session>

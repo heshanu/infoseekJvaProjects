@@ -1,0 +1,23 @@
+package inheritance;
+
+public class Rectangle extends Shape {
+
+	@Override
+	public double calculateArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double calculatePeremter() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,70 @@
+package jdbc.service;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import jdbc.dto.BankDTO;
+import jdbc.util.JDBCUtil;
+
+public class BankService {
+
+	public static void createBank(BankDTO bankDTO) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preset = null;
+
+		String insertSQL = "insert into banks(bankId,bankname,bankcode,status) values(?,?,?,?)";
+		try {
+			connection = JDBCUtil.getConnection();
+			preset = connection.prepareStatement(insertSQL);
+			preset.setLong(1, bankDTO.getBankid());
+			preset.setString(2, bankDTO.getName());
+			preset.setString(3, bankDTO.getCode());
+			preset.setString(4, bankDTO.getStatus());
+
+			int returnValue = preset.executeUpdate();
+
+			System.out.println(returnValue);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			preset.close();
+			connection.close();
+		}
+
+	}
+
+	public static void updateBank(BankDTO bankdto) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preset = null;
+
+		String updateSql = "Update banks set bankcode=?,bankname=?,status=? where bankId=? ";
+		connection = JDBCUtil.getConnection();
+
+		try {
+			preset = connection.prepareStatement(updateSql);
+			preset.setString(1, bankdto.getCode());
+			preset.setString(2, bankdto.getName());
+			preset.setString(3, bankdto.getStatus());
+			preset.setLong(4, bankdto.getBankid());
+
+			int returnV = preset.executeUpdate();
+
+			System.out.println(returnV);
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+				preset.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+}
