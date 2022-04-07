@@ -62,3 +62,7 @@
 12:25:17,164 DEBUG SQL:109 - update message set TEXT=? where ID=?
 12:25:17,165 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [HEllow Fucccccccccker Automatic Dirty Checking]
 12:25:17,165 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+12:29:38,766 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:29:38,780 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:29:38,801 DEBUG SQL:109 - delete from message where ID=?
+12:29:38,801 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
