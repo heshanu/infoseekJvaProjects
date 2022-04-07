@@ -1,2 +1,64 @@
 10:10:25,658 DEBUG SQL:109 - insert into message (TEXT) values (?)
 10:10:25,670 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations]
+11:23:25,071 DEBUG SQL:109 - insert into message (TEXT) values (?)
+11:23:25,096 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations]
+11:28:45,296 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:28:45,310 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+11:31:43,284 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:31:43,299 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+11:34:51,684 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:34:51,697 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+11:37:10,976 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:37:10,988 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+11:39:34,951 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:39:34,965 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+11:39:34,988 DEBUG SQL:109 - delete from message where ID=?
+11:39:34,989 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+11:40:24,988 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:40:25,000 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+11:41:31,987 DEBUG SQL:109 - insert into message (TEXT) values (?)
+11:41:31,999 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations]
+11:48:21,597 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:48:21,613 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+11:49:11,349 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:49:11,362 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [10]
+11:55:53,403 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:55:53,418 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+11:56:41,278 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:56:41,290 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+11:58:29,461 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+11:58:29,475 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:01:21,559 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:01:21,576 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:01:56,933 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:01:56,945 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [100]
+12:04:02,725 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:04:02,740 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:04:33,971 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:04:33,983 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:04:51,178 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:04:51,195 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+12:04:51,225 DEBUG SQL:109 - delete from message where ID=?
+12:04:51,225 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+12:12:38,722 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:12:38,736 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+12:12:50,776 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:12:50,790 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:13:51,272 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:13:51,284 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:16:08,885 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:16:08,897 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+12:16:43,124 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:16:43,138 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+12:24:27,637 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:24:27,649 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+12:24:43,843 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:24:43,855 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+12:24:43,875 DEBUG SQL:109 - update message set TEXT=? where ID=?
+12:24:43,876 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [HEllo Automatic Dirty Checking]
+12:24:43,876 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+12:25:17,115 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+12:25:17,132 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+12:25:17,164 DEBUG SQL:109 - update message set TEXT=? where ID=?
+12:25:17,165 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [HEllow Fucccccccccker Automatic Dirty Checking]
+12:25:17,165 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]

@@ -1,0 +1,41 @@
+package client;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+import entity.Message;
+
+public class HelloWorldClient {
+	/*
+	public static void main(String[] args) {
+		
+				Session session = HibernateUtil.getSessionFactory().openSession();
+        		session.beginTransaction();
+        
+        		Message message = new Message( "Hello World with Hibernate and JPA Annotations" );
+        
+        		session.save(message);    
+        
+        		session.getTransaction().commit();
+        		session.close();
+	
+	}*/
+	public static void main(String[] args) {
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction txn=session.getTransaction();
+		Message msg=null;
+		try {
+			txn.begin();
+			msg=(Message) session.get(Message.class, 2L);
+			txn.commit();
+			
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		finally {}
+
+	}
+}
+
