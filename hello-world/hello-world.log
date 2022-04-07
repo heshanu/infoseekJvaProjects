@@ -66,3 +66,10 @@
 12:29:38,780 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
 12:29:38,801 DEBUG SQL:109 - delete from message where ID=?
 12:29:38,801 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+13:03:52,097 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+13:03:52,111 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+13:04:11,842 DEBUG SQL:109 - select message0_.ID as ID1_0_0_, message0_.TEXT as TEXT2_0_0_ from message message0_ where message0_.ID=?
+13:04:11,855 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+13:04:11,876 DEBUG SQL:109 - update message set TEXT=? where ID=?
+13:04:11,877 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [hiii]
+13:04:11,877 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]

@@ -84,18 +84,40 @@ public class HelloWorldClient {
 //	}
 
 	// delete records!
+//	public static void main(String[] args) {
+//		Session session = HibernateUtil.getSessionFactory().openSession();
+//		Transaction txn = session.getTransaction();
+//		Message msg = null;
+//		try {
+//			txn.begin();
+//
+//			msg = (Message) session.get(Message.class, 2L);
+//			session.delete(msg);
+//			msg.setText("Suceefully Deleted!");
+//			txn.commit();
+//
+//		} catch (Exception e) {
+//			if (txn != null) {
+//				txn.rollback();
+//			}
+//			e.printStackTrace();
+//		} finally {
+//			if (session != null) {
+//				session.close();
+//			}
+//		}
+//	}
+
 	public static void main(String[] args) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction txn = session.getTransaction();
 		Message msg = null;
 		try {
 			txn.begin();
-
-			msg = (Message) session.get(Message.class, 2L);
-			session.delete(msg);
-			msg.setText("Suceefully Deleted!");
+			msg = (Message) session.get(Message.class, 1L);
+			msg.setText("hiii");
+			session.update(msg);
 			txn.commit();
-
 		} catch (Exception e) {
 			if (txn != null) {
 				txn.rollback();
@@ -105,7 +127,7 @@ public class HelloWorldClient {
 			if (session != null) {
 				session.close();
 			}
+
 		}
 	}
-
 }
