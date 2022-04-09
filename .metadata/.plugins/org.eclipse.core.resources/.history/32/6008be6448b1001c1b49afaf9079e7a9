@@ -1,5 +1,0 @@
-package jdbc.service;
-
-public class BankService {
-
-}
