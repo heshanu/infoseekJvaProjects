@@ -1,0 +1,19 @@
+@charset "ISO-8859-1";
+
+
+form{
+	margin-left:200px;
+	margin-right:200px;
+	margin-top:200px;
+	margin-bottom:100px;
+}
+
+.l{
+	margin-left:200px;
+	margin-right:200px;
+}
+
+body {background-color: coral;}
+input{
+	border-radius:10px;
+}

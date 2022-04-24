@@ -2,17 +2,64 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Registration</title>
+ <link rel="stylesheet" href="register.css">
 </head>
 <body>
-<h1>Register Page!</h1>
-<form method="post">
-<label>Username<input type="text" name="username"><br>	
-<label>password<input type="password" name="password"><br>
-<label>Name<input type="text" name="username">	<br>
-<label>Address<input type="password" name="password"><br>
+	<h1>Register Page!</h1>
+	<legend>Register Form!</legend>
+	<form method="post" action="register">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Address</td>
+				<td><input type="text" name="address"></td>
+			</tr>
 
-<a href="index.html">Login Page</a>
-</form>
+			<tr>
+				<td>Gender</td>
+				<td><input type="radio" name="gender" value="male">Male
+					<input type="radio" name="gender" value="female">Female</td>
+				</td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>Home Town</td>
+				<td><select>
+						<option name="town" value="Galle">Galle</option>
+						<option name="town"  value="Hikka">Hikka</option>
+						<option name="town"  value="Colombo">Colombo</option>
+						<option name="town"  value="Nuwara">Nuwara</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Qualification</td>
+				<td>OL <input type="checkbox" name="qualification" value="Ol">
+				AL<input type="checkbox" name="qualification" value="Al">
+				</td>
+				</td>
+
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit"></td>
+				<td><input type="reset" value="reset"></td>
+			</tr>
+
+		</table>
+
+
+
+		<a href="index.html">Login Page</a>
+	</form>
 </body>
 </html>

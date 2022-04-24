@@ -1,5 +1,6 @@
 package entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,12 +26,35 @@ public class Student {
 	private Long id;
 	*/
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getEnrollmentId() {
+		return enrollmentId;
+	}
+	public void setEnrollmentId(String enrollmentId) {
+		this.enrollmentId = enrollmentId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Guide getGuide() {
+		return guide;
+	}
+	public void setGuide(Guide guide) {
+		this.guide = guide;
+	}
 	@Column(name="enrollment_id", nullable=false)
 	private String enrollmentId;	
 	
 	private String name;
 	
-	@ManyToOne
 	@JoinColumn(name="guide_id")
 	private Guide guide;
 	

@@ -2,16 +2,29 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login Form</title>
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
-<h1>Hellow</h1>
-<form>
-<label>Username<input type="text" name="username">	
-<label>password<input type="password" name="password"><br>
-<button>Submit!</button><br>
-<a href="register.html">Register Now!</a>
-</form>
-
+	<h1 class="l">Login Form</h1>
+	<form method="post" action="login">
+		<table>
+			<tr>
+				<td>UserName</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<br>
+				<br>
+				<td><input type="submit" value="Submit"></td>
+				<td><input type="reset" value="Reset"></td>
+			</tr>
+		</table>
+		<br> <br> <a href="register.html">Register Now!</a>
+	</form>
 </body>
 </html>
