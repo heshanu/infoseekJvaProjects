@@ -73,3 +73,11 @@
 13:04:11,876 DEBUG SQL:109 - update message set TEXT=? where ID=?
 13:04:11,877 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [hiii]
 13:04:11,877 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+10:54:44,566 DEBUG SQL:109 - insert into message (TEXT) values (?)
+10:54:44,615 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations]
+10:55:38,092 DEBUG SQL:109 - insert into message (TEXT) values (?)
+10:55:38,106 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations1]
+11:14:14,120 DEBUG SQL:109 - insert into message (TEXT) values (?)
+11:14:14,132 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations2]
+11:42:29,836 DEBUG SQL:109 - insert into message (TEXT) values (?)
+11:42:29,856 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations3]

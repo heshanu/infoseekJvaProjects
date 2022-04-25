@@ -114,10 +114,15 @@ public class HelloWorldClient {
 		Message msg = null;
 		try {
 			txn.begin();
-			msg = (Message) session.get(Message.class, 1L);
-			msg.setText("hiii");
-			session.update(msg);
+
+			msg = new Message("Hello World with Hibernate and JPA Annotations3");
+
+			session.save(msg);
+
+			// session.getTransaction().commit();
+			System.out.println(msg);
 			txn.commit();
+			
 		} catch (Exception e) {
 			if (txn != null) {
 				txn.rollback();
