@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,40 +37,31 @@ public class login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
+		Connection connection = null;
+		PreparedStatement preset = null;
+
+		String insertSQL = "insert into user(username,password) values(?,?)";
 		try {
-			Connection connection = JDBCUtil.getConnection();
-			// Connection connection = null;
-			PreparedStatement preset = null;
-			ResultSet rs = null;
-			int rowCount = 0;
+			connection = JDBCUtil.getConnection();
+			preset = connection.prepareStatement(insertSQL);
+			preset.setString(1, username);
+			preset.setString(2, password);
 
-			// register r=new register();
-			String SelectSQL = "select * from usersx";
-			if (username != null && password != null) {
-				// System.out.println("Login success");
-				preset = connection.prepareStatement(SelectSQL);
-				rs = preset.executeQuery();
+			int returnValue = preset.executeUpdate();
 
-				while (rs.next()) {
-					rowCount++;
-				}
-				if (rowCount >= 1) {
-					System.out.println("successfuly login");
-				} else {
-					System.out.println("cannot find matching!");
-				}
-
-				// preset.setString(1,usersDTO.getName());
-				// preset.setString(2, usersDTO.getAddress());
-
+			System.out.println(returnValue);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			try {
+				preset.close();
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 
-			System.out.println(username + " " + password + " " + rowCount);
-
-		} catch (Exception e) {
-			System.out.println(e);
 		}
-
 		// System.out.println(username + " " + password);
 
 	}
