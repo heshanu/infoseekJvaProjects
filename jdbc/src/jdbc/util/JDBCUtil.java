@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class JDBCUtil {
 	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-	private static final String DB_URL = "jdbc:mysql://localhost:3306/infoseek";
+	private static final String DB_URL = "jdbc:mysql://localhost:3306/employee";
 	private static final String DB_USERNAME = "root";
 	private static final String DB_PASSWORD = "";
 
@@ -27,13 +27,14 @@ public class JDBCUtil {
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		
-		if(connection!=null) {
+
+		if (connection != null) {
 			System.out.println("Connection is up and runing!");
-		}else {
+		} else {
 			System.out.println("connection is null!");
 		}
 		return connection;
 
 	}
+
 }

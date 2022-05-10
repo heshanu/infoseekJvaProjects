@@ -7,35 +7,41 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LoginController
- */
+import com.dto.UserDTO;
+import com.service.LoginService;
+
 @WebServlet("/LoginController")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LoginController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	public LoginController() {
+		super();
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.print("Do post method");
+
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+
+		LoginService loginservice = new LoginService();
+		boolean isAuthenticated = loginservice.authenticateUserLogin(username, password);
+
+		if (isAuthenticated) {
+			String fullName = loginservice.getFullNameByUserName(username);
+
+			UserDTO userdto = loginservice.getFullDetailsOfUser(username);
+
+			request.getSession().setAttribute("fullName", fullName);
+			request.getSession().setAttribute("userDTO", userdto);
+			System.out.println("successfully Login!");
+			response.sendRedirect("/Home.jsp");
+		} else {
+			response.sendRedirect("/Login.jsp");
+		}
+
 	}
 
 }
