@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 @WebServlet("/inbox")
 public class inboxServelet extends HttpServlet {
@@ -39,9 +41,12 @@ public class inboxServelet extends HttpServlet {
 		String message = request.getParameter("message");
 
 		RequestDispatcher dispatcher = null;
+		ResultSet rs1 = null;
 		Connection connection = null;
 		HttpSession session = request.getSession();
 		ResultSet rs = null;
+		JFrame parent = new JFrame();
+
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -55,21 +60,20 @@ public class inboxServelet extends HttpServlet {
 
 			int row = pst.executeUpdate();
 
-			if (rs.next()) {
-				// request.setAttribute("sta", connection)
-				session.setAttribute("tot", rs.getString("tot"));
-				session.setAttribute("subject", rs.getString("subject"));
-				session.setAttribute("message", rs.getString("message"));
-				dispatcher = request.getRequestDispatcher("index.jsp");
-			}
+			//select
+			
 
-			dispatcher = request.getRequestDispatcher("send.jsp");
+			
 			if (row > 0) {
 				request.setAttribute("status", "success");
+				JOptionPane.showMessageDialog(parent, "Successfully Registered!");
+				
 
 			} else {
 				request.setAttribute("status", "Failed");
+				JOptionPane.showMessageDialog(parent, "unable to Registered!");
 			}
+			dispatcher = request.getRequestDispatcher("inbox.jsp");
 			dispatcher.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

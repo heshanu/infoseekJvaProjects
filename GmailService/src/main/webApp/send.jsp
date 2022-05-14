@@ -61,9 +61,9 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="./index.jsp">InBox</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="index.jsp">InBox</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="./send.jsp">Send</a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="send.jsp">Send</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Trash</a></li>
 					<li class="nav-item mx-0 mx-lg-1"><a
@@ -71,7 +71,7 @@
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="nav-link py-3 px-0 px-lg-3 rounded" href="logout">Logout</a></li>
 					<li class="nav-item mx-0 mx-lg-1 bg-danger"><a
-						class="nav-link py-3 px-0 px-lg-3 rounded" href="logout"><%=session.getAttribute("name")%>></a></li>
+						class="nav-link py-3 px-0 px-lg-3 rounded" href="logout"><%=session.getAttribute("name")%></a></li>
 
 				</ul>
 			</div>
@@ -97,25 +97,28 @@
 					<!-- https://startbootstrap.com/solution/contact-forms-->
 					<!-- to get an API token!-->
 					<h1>SendBox</h1>
-					
-					<table border="1" width="100%">
+					<form method="post" action="sendbox">
+						<div class="form-group form-button">
+							<input type="submit" name="signin" id="signin"
+								class="form-submit" value="Log in" />
+						</div>
+					</form>
+
+
+					<table border="1" style="width: 100%">
+						<th>TO
+						<td></td>SUBJECT
+						<td></td>
+						<td>MESSAGE
+						</td></th>
+
+
 						<tr>
-							<th>To</th>
-							<th>Subject</th>
-							<th>Message</th>
 						</tr>
-						
-						<tr>
-						<td><%=session.getAttribute("tot")%></td>
-						<td><%=session.getAttribute("subject")%></td>
-						<td><%=session.getAttribute("message")%></td>
-						</tr>
-						
 					</table>
-					
-					
-					
-					
+
+
+
 				</div>
 			</div>
 		</div>
@@ -180,11 +183,7 @@
 								<img class="img-fluid rounded mb-5"
 									src="assets/img/portfolio/cabin.png" alt="..." />
 								<!-- Portfolio Modal - Text-->
-								<p class="mb-4">Lorem ipsum dolor sit amet, consectetur
-									adipisicing elit. Mollitia neque assumenda ipsam nihil,
-									molestias magnam, recusandae quos quis inventore quisquam velit
-									asperiores, vitae? Reprehenderit soluta, eos quod consequuntur
-									itaque. Nam.</p>
+
 								<button class="btn btn-primary" href="#!"
 									data-bs-dismiss="modal">
 									<i class="fas fa-times fa-fw"></i> Close Window

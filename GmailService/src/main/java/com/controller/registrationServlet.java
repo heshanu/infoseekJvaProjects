@@ -13,6 +13,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 @WebServlet("/register")
 public class registrationServlet extends HttpServlet {
@@ -40,6 +42,7 @@ public class registrationServlet extends HttpServlet {
 		String umobile = request.getParameter("contact");
 		RequestDispatcher dispatcher = null;
 		Connection connection = null;
+		JFrame parent = new JFrame();
 
 		PrintWriter out = response.getWriter();
 		out.print(uname + " ");
@@ -49,7 +52,8 @@ public class registrationServlet extends HttpServlet {
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration_form?useSSL=false", "root", "");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration_form?useSSL=false",
+					"root", "");
 			PreparedStatement pst = connection
 					.prepareStatement("insert into user(uname,uemail,upwd,umobile) values(?,?,?,?);");
 			pst.setString(1, uname);
@@ -61,9 +65,11 @@ public class registrationServlet extends HttpServlet {
 			dispatcher = request.getRequestDispatcher("registration.jsp");
 			if (row > 0) {
 				request.setAttribute("status", "success");
+				JOptionPane.showMessageDialog(parent, "Successfully Registered!");
 
 			} else {
 				request.setAttribute("status", "Failed");
+				JOptionPane.showMessageDialog(parent, "unable to Registered!");
 			}
 			dispatcher.forward(request, response);
 		} catch (Exception e) {

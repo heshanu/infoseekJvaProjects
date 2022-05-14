@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.websocket.Session;
 
 import com.dto.UserDTO;
@@ -55,6 +57,7 @@ public class LoginController extends HttpServlet {
 		Connection connection = null;
 		ResultSet rs = null;
 		HttpSession session = request.getSession();
+		JFrame frame = new JFrame();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration_form?useSSL=false",
@@ -67,9 +70,17 @@ public class LoginController extends HttpServlet {
 			if (rs.next()) {
 				// request.setAttribute("sta", connection)
 				session.setAttribute("name", rs.getString("uname"));
+				//int result = JOptionPane.showConfirmDialog(frame, "Record has been saved!");
+				// JOptionPane.showInternalConfirmDialog(desktop, "Continue printing?");
+
+				//System.out.println(JOptionPane.CANCEL_OPTION == result);
 				dispatcher = request.getRequestDispatcher("index.jsp");
 			} else {
 				request.setAttribute("status", "failed");
+				//int result = JOptionPane.showConfirmDialog(frame, "Unable to save");
+				// JOptionPane.showInternalConfirmDialog(desktop, "Continue printing?");
+
+				//System.out.println(JOptionPane.CANCEL_OPTION == result);
 				dispatcher = request.getRequestDispatcher("login.jsp");
 			}
 			dispatcher.forward(request, response);

@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,17 +16,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
-/**
- * Servlet implementation class sendboxServlet
- */
+import com.dto.UserDTO;
+import com.dto.sendboxDTO;
+
 @WebServlet("/sendbox")
 public class sendboxServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
 	public sendboxServlet() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -42,30 +43,31 @@ public class sendboxServlet extends HttpServlet {
 		// doGet(request, response);
 		String tot = request.getParameter("tot");
 		String subject = request.getParameter("subject");
-		String message=request.getParameter("message");
+		String message = request.getParameter("message");
 		RequestDispatcher dispatcher = null;
 		Connection connection = null;
 		ResultSet rs = null;
-		HttpSession session = request.getSession();
+		HttpSession session1 = request.getSession();
+		JFrame parent = new JFrame();
+		List<sendboxDTO> sendList = new ArrayList<sendboxDTO>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/registration_form?useSSL=false",
 					"root", "");
-			PreparedStatement pst = connection.prepareStatement("select * from user where uname=? and upwd=?");
-			pst.setString(1, tot);
-			pst.setString(2, subject);
-			pst.setString(3, message);
-
+			PreparedStatement pst = connection.prepareStatement("SELECT * FROM sendtable");
 			rs = pst.executeQuery();
-			if (rs.next()) {
-				// request.setAttribute("sta", connection)
-				//session.setAttribute("name", rs.getString("uname"));
-				//session.setAttribute("name", rs.getString("tot"));	
-				dispatcher = request.getRequestDispatcher("index.jsp");
-			} else {
-				request.setAttribute("status", "failed");
-				dispatcher = request.getRequestDispatcher("login.jsp");
+			while (rs.next()) {
+
+				sendboxDTO send = new sendboxDTO();
+				send.setTot(rs.getString("tot"));
+				send.setSubject(rs.getString("subject"));
+				send.setMessage(rs.getString("message"));
+				sendList.add(send);
+				request.setAttribute("sendList", sendList );
+				session1.setAttribute("sendList",sendList);
+				dispatcher = request.getRequestDispatcher("send.jsp");
 			}
+
 			dispatcher.forward(request, response);
 
 		} catch (Exception e) {
