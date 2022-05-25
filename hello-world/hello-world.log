@@ -81,3 +81,37 @@
 11:14:14,132 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations2]
 11:42:29,836 DEBUG SQL:109 - insert into message (TEXT) values (?)
 11:42:29,856 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations3]
+08:55:48,232 DEBUG SQL:109 - drop table if exists student1
+08:55:48,639 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+08:59:41,951 DEBUG SQL:109 - drop table if exists student1
+08:59:42,243 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:02:04,674 DEBUG SQL:109 - drop table if exists student1
+09:02:04,883 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:06:03,417 DEBUG SQL:109 - drop table if exists student1
+09:06:03,789 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:13:49,235 DEBUG SQL:109 - drop table if exists student1
+09:13:49,414 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:16:15,556 DEBUG SQL:109 - drop table if exists student1
+09:16:16,310 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:22:34,603 DEBUG SQL:109 - drop table if exists student1
+09:22:34,955 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:24:02,398 DEBUG SQL:109 - drop table if exists student1
+09:24:02,779 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:26:28,001 DEBUG SQL:109 - drop table if exists student1
+09:26:28,253 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+09:32:14,577 DEBUG SQL:109 - drop table if exists message
+09:32:14,930 DEBUG SQL:109 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID))
+09:41:40,604 DEBUG SQL:109 - drop table if exists message
+09:41:42,006 DEBUG SQL:109 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID))
+09:50:33,631 DEBUG SQL:109 - drop table if exists message
+09:50:33,910 DEBUG SQL:109 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID))
+10:10:15,000 DEBUG SQL:109 - drop table if exists message
+10:10:15,182 DEBUG SQL:109 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID))
+13:34:45,266 DEBUG SQL:109 - drop table if exists student1
+13:34:45,296 DEBUG SQL:109 - create table student1 (studentID bigint not null auto_increment, address varchar(255), contactNo varchar(255), dob varchar(255), firstName varchar(255), lastName varchar(255), primary key (studentID))
+13:36:34,391 DEBUG SQL:109 - drop table if exists message
+13:36:34,637 DEBUG SQL:109 - create table message (ID bigint not null auto_increment, TEXT varchar(255), primary key (ID))
+13:36:34,966 DEBUG SQL:109 - insert into message (TEXT) values (?)
+13:36:34,978 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Hello World with Hibernate and JPA Annotations]
+14:08:39,459 DEBUG SQL:109 - insert into message (TEXT) values (?)
+14:08:39,473 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1Hello World with Hibernate and JPA Annotations]

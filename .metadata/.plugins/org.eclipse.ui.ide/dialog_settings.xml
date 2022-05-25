@@ -96,6 +96,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Heshan\Downloads\flightservices"/>
+			<item value="C:\Users\Heshan\surecore"/>
 			<item value="D:\login-project"/>
 			<item value="D:\files\New folder"/>
 			<item value="C:\Users\Heshan\Downloads\mvc1 (1)"/>
@@ -127,5 +129,7 @@
 			<item key="DIALOG_Y_ORIGIN" value="131"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
+	</section>
+	<section name="ExternalProjectImportWizard">
 	</section>
 </section>

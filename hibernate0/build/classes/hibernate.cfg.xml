@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hello</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+		<!-- Pretty print the SQL in the log file and console -->
+		<property name="format_sql">true</property>
+
+		<!-- Create/update tables automatically using mapping metadata -->
+		<property name="hbm2ddl.auto">create</property>
+
+		<!-- mapping class="domain.Book" /> <mapping class="domain.Student" /> -->
+
+		<!--<mapping class="domainMany2one.Van" />
+		<mapping class="domainMany2one.Driver" />-->
+		
+		<mapping class="domainMany2Many.Jeep" />
+		<mapping class="domainMany2Many.Owner" />
+
+	</session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

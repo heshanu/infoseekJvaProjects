@@ -13,58 +13,34 @@ import javax.persistence.ManyToOne;
 public class Student {
 	
 	//for Hibernate 4.3.x Users
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long id;
-	
-	// for Hibernate 5.x Users
-	// if you're using Hibernate 5.x, use GenerationType.IDENTITY id generator strategy explicitly
-	// for more information on "GenerationType" have a look at https://www.udemy.com/hibernate-and-jpa-fundamentals/learn/v4/questions/937412
-	/*
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	*/
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getEnrollmentId() {
-		return enrollmentId;
-	}
-	public void setEnrollmentId(String enrollmentId) {
-		this.enrollmentId = enrollmentId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Guide getGuide() {
-		return guide;
-	}
-	public void setGuide(Guide guide) {
-		this.guide = guide;
-	}
-	@Column(name="enrollment_id", nullable=false)
-	private String enrollmentId;	
-	
-	private String name;
-	
-	@JoinColumn(name="guide_id")
-	private Guide guide;
-	
-	public Student() {}
-	public Student(String enrollmentId, String name, Guide guide) {
-		this.enrollmentId = enrollmentId;
-		this.name = name;
-		this.guide = guide;
-	}
-	
+		@Id
+		@GeneratedValue(strategy=GenerationType.AUTO)
+		private Long id;
+		
+		// for Hibernate 5.x Users
+		// if you're using Hibernate 5.x, use GenerationType.IDENTITY id generator strategy explicitly
+		// for more information on "GenerationType" have a look at https://www.udemy.com/hibernate-and-jpa-fundamentals/learn/v4/questions/937412
+		/*
+		@Id
+		@GeneratedValue(strategy=GenerationType.IDENTITY)
+		private Long id;
+		*/
+		
+		@Column(name="enrollment_id", nullable=false)
+		private String enrollmentId;	
+		
+		private String name;
+		
+		@ManyToOne
+		@JoinColumn(name="guide_id")
+		private Guide guide;
+		
+		public Student() {}
+		public Student(String enrollmentId, String name, Guide guide) {
+			this.enrollmentId = enrollmentId;
+			this.name = name;
+			this.guide = guide;
+		}
 }
 
 

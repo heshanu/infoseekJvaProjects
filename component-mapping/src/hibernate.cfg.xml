@@ -8,7 +8,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/hello-world</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hibenate</property>
         <property name="connection.username">root</property>
         <property name="connection.password"></property>
 
@@ -25,10 +25,11 @@
         <!-- <property name="hbm2ddl.auto">create-drop</property> -->        
 
         <!-- Create/update tables automatically using mapping metadata -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
          
         <!-- Use Annotation-based mapping metadata -->
-        <mapping class="entity.Person"/>            
+        <mapping class="entity.Person"/>
+      
         
     </session-factory>
 </hibernate-configuration>

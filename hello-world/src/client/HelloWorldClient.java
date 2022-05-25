@@ -1,27 +1,28 @@
 package client;
 
+import java.awt.print.Book;
+import java.util.Date;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
+//import domain.Student1;
 import entity.Message;
 import util.HibernateUtil;
 
 public class HelloWorldClient {
-//
-//	public static void main(String[] args) {
-//
-//		Session session = HibernateUtil.getSessionFactory().openSession();
-//		session.beginTransaction();
-//
-//		Message message = new Message("Hello World with Hibernate and JPA Annotations");
-//
-//		session.save(message);
-//
-//		session.getTransaction().commit();
-//		session.close();
-//
-//	}
 
+	public static void main(String[] args) {
+
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+
+		Message message = new Message("1Hello World with Hibernate and JPA Annotations");
+
+		session.save(message);
+
+		session.getTransaction().commit();
+		session.close();
+
+	}
 	// finding a value using id
 
 //	public static void main(String[] args) {
@@ -108,31 +109,31 @@ public class HelloWorldClient {
 //		}
 //	}
 
-	public static void main(String[] args) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		Transaction txn = session.getTransaction();
-		Message msg = null;
-		try {
-			txn.begin();
-
-			msg = new Message("Hello World with Hibernate and JPA Annotations3");
-
-			session.save(msg);
-
-			// session.getTransaction().commit();
-			System.out.println(msg);
-			txn.commit();
-			
-		} catch (Exception e) {
-			if (txn != null) {
-				txn.rollback();
-			}
-			e.printStackTrace();
-		} finally {
-			if (session != null) {
-				session.close();
-			}
-
-		}
-	}
+//	public static void main(String[] args) {
+//		Session session = HibernateUtil.getSessionFactory().openSession();
+//		Transaction txn = session.getTransaction();
+//		Message msg = null;
+//		try {
+//			txn.begin();
+//
+//			msg = new Message("Hello World with Hibernate and JPA Annotations3");
+//
+//			session.save(msg);
+//
+//			// session.getTransaction().commit();
+//			System.out.println(msg);
+//			txn.commit();
+//			
+//		} catch (Exception e) {
+//			if (txn != null) {
+//				txn.rollback();
+//			}
+//			e.printStackTrace();
+//		} finally {
+//			if (session != null) {
+//				session.close();
+//			}
+//
+//		}
+//	}
 }

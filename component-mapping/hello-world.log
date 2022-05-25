@@ -9,3 +9,47 @@
 13:54:32,361 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [200 E Main St]
 13:54:32,361 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [85123]
 13:54:32,361 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]
+17:43:12,426 DEBUG SQL:109 - 
+    drop table if exists Person
+17:43:12,441 DEBUG SQL:109 - 
+    create table Person (
+        id bigint not null auto_increment,
+        city varchar(255),
+        street varchar(255),
+        zipcode varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+17:43:34,934 DEBUG SQL:109 - 
+    drop table if exists Person
+17:43:35,121 DEBUG SQL:109 - 
+    create table Person (
+        id bigint not null auto_increment,
+        city varchar(255),
+        street varchar(255),
+        zipcode varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+17:48:11,802 DEBUG SQL:109 - 
+    drop table if exists Person
+17:48:12,119 DEBUG SQL:109 - 
+    create table Person (
+        id bigint not null auto_increment,
+        city varchar(255),
+        street varchar(255),
+        zipcode varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    )
+17:48:12,470 DEBUG SQL:109 - 
+    insert 
+    into
+        Person
+        (city, street, zipcode, name) 
+    values
+        (?, ?, ?, ?)
+17:48:12,480 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Seattle]
+17:48:12,480 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [200 E Main St]
+17:48:12,480 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [85123]
+17:48:12,480 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [Ruby]

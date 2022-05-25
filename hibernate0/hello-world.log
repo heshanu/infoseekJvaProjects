@@ -1,0 +1,2005 @@
+17:57:37,547 DEBUG SQL:109 - 
+    alter table Manager 
+        drop 
+        foreign key FK_acfc2dhh0mkiyjw1u9fiqudjv
+17:57:37,612 DEBUG SQL:109 - 
+    drop table if exists Manager
+17:57:37,643 DEBUG SQL:109 - 
+    drop table if exists bank
+17:57:37,646 DEBUG SQL:109 - 
+    create table Manager (
+        managerId bigint not null auto_increment,
+        contactNo varchar(255),
+        dob datetime,
+        name varchar(255),
+        bank_id bigint,
+        primary key (managerId)
+    )
+17:57:37,969 DEBUG SQL:109 - 
+    create table bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        description varchar(255),
+        status varchar(255),
+        primary key (bankId)
+    )
+17:57:38,293 DEBUG SQL:109 - 
+    alter table Manager 
+        add constraint FK_acfc2dhh0mkiyjw1u9fiqudjv 
+        foreign key (bank_id) 
+        references bank (bankId)
+17:57:39,706 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, status) 
+    values
+        (?, ?, ?)
+17:57:39,726 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+17:57:39,728 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+17:57:39,729 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [A]
+17:57:39,749 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+17:57:39,752 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+17:57:39,752 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+17:57:39,753 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Thu May 19 17:57:39 IST 2022]
+17:57:39,819 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+14:31:40,538 DEBUG SQL:109 - 
+    alter table Manager 
+        drop 
+        foreign key FK_acfc2dhh0mkiyjw1u9fiqudjv
+14:31:40,651 DEBUG SQL:109 - 
+    drop table if exists Manager
+14:31:40,946 DEBUG SQL:109 - 
+    drop table if exists bank
+14:31:41,312 DEBUG SQL:109 - 
+    create table Manager (
+        managerId bigint not null auto_increment,
+        contactNo varchar(255),
+        dob datetime,
+        name varchar(255),
+        bank_id bigint,
+        primary key (managerId)
+    )
+14:31:41,572 DEBUG SQL:109 - 
+    create table bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        description varchar(255),
+        status varchar(255),
+        primary key (bankId)
+    )
+14:31:41,905 DEBUG SQL:109 - 
+    alter table Manager 
+        add constraint FK_acfc2dhh0mkiyjw1u9fiqudjv 
+        foreign key (bank_id) 
+        references bank (bankId)
+14:31:43,003 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, status) 
+    values
+        (?, ?, ?)
+14:31:43,025 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+14:31:43,026 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+14:31:43,026 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [A]
+14:31:43,037 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+14:31:43,038 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+14:31:43,038 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+14:31:43,040 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Sun May 22 14:31:42 IST 2022]
+14:31:43,101 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+14:43:38,654 DEBUG SQL:109 - 
+    alter table Manager 
+        drop 
+        foreign key FK_acfc2dhh0mkiyjw1u9fiqudjv
+14:43:41,662 DEBUG SQL:109 - 
+    alter table bank 
+        drop 
+        foreign key FK_p5au05adhm442qf55grw8b8la
+14:43:41,713 DEBUG SQL:109 - 
+    drop table if exists Manager
+14:43:41,914 DEBUG SQL:109 - 
+    drop table if exists bank
+14:43:42,090 DEBUG SQL:109 - 
+    create table Manager (
+        managerId bigint not null auto_increment,
+        contactNo varchar(255),
+        dob datetime,
+        name varchar(255),
+        bank_id bigint,
+        primary key (managerId)
+    )
+14:43:42,375 DEBUG SQL:109 - 
+    create table bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        description varchar(255),
+        status varchar(255),
+        manager_managerId bigint,
+        primary key (bankId)
+    )
+14:43:42,661 DEBUG SQL:109 - 
+    alter table Manager 
+        add constraint FK_acfc2dhh0mkiyjw1u9fiqudjv 
+        foreign key (bank_id) 
+        references bank (bankId)
+14:43:43,599 DEBUG SQL:109 - 
+    alter table bank 
+        add constraint FK_p5au05adhm442qf55grw8b8la 
+        foreign key (manager_managerId) 
+        references Manager (managerId)
+14:43:44,502 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, manager_managerId, status) 
+    values
+        (?, ?, ?, ?)
+14:43:44,534 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+14:43:44,535 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+14:43:44,536 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+14:43:44,537 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+14:43:44,550 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+14:43:44,551 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+14:43:44,553 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+14:43:44,560 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Sun May 22 14:43:44 IST 2022]
+14:43:44,618 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+14:43:44,633 DEBUG SQL:109 - 
+    update
+        bank 
+    set
+        code=?,
+        description=?,
+        manager_managerId=?,
+        status=? 
+    where
+        bankId=?
+14:43:44,634 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+14:43:44,635 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+14:43:44,635 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+14:43:44,636 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+14:43:44,636 TRACE BasicBinder:81 - binding parameter [5] as [BIGINT] - [1]
+14:47:08,052 DEBUG SQL:109 - 
+    alter table Manager 
+        drop 
+        foreign key FK_acfc2dhh0mkiyjw1u9fiqudjv
+14:47:09,180 DEBUG SQL:109 - 
+    alter table bank 
+        drop 
+        foreign key FK_nbmox5tvxngsqymidn810w1j7
+14:47:09,267 DEBUG SQL:109 - 
+    drop table if exists Manager
+14:47:09,399 DEBUG SQL:109 - 
+    drop table if exists bank
+14:47:09,578 DEBUG SQL:109 - 
+    create table Manager (
+        managerId bigint not null auto_increment,
+        contactNo varchar(255),
+        dob datetime,
+        name varchar(255),
+        bank_id bigint,
+        primary key (managerId)
+    )
+14:47:09,586 DEBUG SQL:109 - 
+    create table bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        description varchar(255),
+        status varchar(255),
+        managerId bigint,
+        primary key (bankId)
+    )
+14:47:09,794 DEBUG SQL:109 - 
+    alter table Manager 
+        add constraint FK_acfc2dhh0mkiyjw1u9fiqudjv 
+        foreign key (bank_id) 
+        references bank (bankId)
+14:47:10,721 DEBUG SQL:109 - 
+    alter table bank 
+        add constraint FK_nbmox5tvxngsqymidn810w1j7 
+        foreign key (managerId) 
+        references Manager (managerId)
+14:47:11,924 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, managerId, status) 
+    values
+        (?, ?, ?, ?)
+14:47:11,943 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+14:47:11,944 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+14:47:11,945 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+14:47:11,945 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+14:47:11,957 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+14:47:11,959 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+14:47:11,960 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+14:47:11,967 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Sun May 22 14:47:11 IST 2022]
+14:47:12,028 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+14:47:12,043 DEBUG SQL:109 - 
+    update
+        bank 
+    set
+        code=?,
+        description=?,
+        managerId=?,
+        status=? 
+    where
+        bankId=?
+14:47:12,044 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+14:47:12,045 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+14:47:12,046 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [2]
+14:47:12,046 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+14:47:12,047 TRACE BasicBinder:81 - binding parameter [5] as [BIGINT] - [1]
+15:00:05,269 DEBUG SQL:109 - 
+    alter table Manager 
+        drop 
+        foreign key FK_acfc2dhh0mkiyjw1u9fiqudjv
+15:00:05,446 DEBUG SQL:109 - 
+    alter table bank 
+        drop 
+        foreign key FK_nbmox5tvxngsqymidn810w1j7
+15:00:05,537 DEBUG SQL:109 - 
+    drop table if exists Manager
+15:00:05,703 DEBUG SQL:109 - 
+    drop table if exists bank
+15:00:05,862 DEBUG SQL:109 - 
+    create table Manager (
+        managerId bigint not null auto_increment,
+        contactNo varchar(255),
+        dob datetime,
+        name varchar(255),
+        bank_id bigint,
+        primary key (managerId)
+    )
+15:00:06,218 DEBUG SQL:109 - 
+    create table bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        description varchar(255),
+        status varchar(255),
+        managerId bigint,
+        primary key (bankId)
+    )
+15:00:06,678 DEBUG SQL:109 - 
+    alter table Manager 
+        add constraint FK_acfc2dhh0mkiyjw1u9fiqudjv 
+        foreign key (bank_id) 
+        references bank (bankId)
+15:00:07,765 DEBUG SQL:109 - 
+    alter table bank 
+        add constraint FK_nbmox5tvxngsqymidn810w1j7 
+        foreign key (managerId) 
+        references Manager (managerId)
+15:00:08,870 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, managerId, status) 
+    values
+        (?, ?, ?, ?)
+15:00:08,889 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+15:00:08,889 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+15:00:08,890 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+15:00:08,890 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+15:00:08,909 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+15:00:08,911 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+15:00:08,913 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+15:00:08,917 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Sun May 22 15:00:08 IST 2022]
+15:00:08,981 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+15:00:08,998 DEBUG SQL:109 - 
+    select
+        bank0_.bankId as bankId1_1_0_,
+        bank0_.code as code2_1_0_,
+        bank0_.description as descript3_1_0_,
+        bank0_.managerId as managerI5_1_0_,
+        bank0_.status as status4_1_0_,
+        manager1_.managerId as managerI1_0_1_,
+        manager1_.bank_id as bank_id5_0_1_,
+        manager1_.contactNo as contactN2_0_1_,
+        manager1_.dob as dob3_0_1_,
+        manager1_.name as name4_0_1_,
+        bank2_.bankId as bankId1_1_2_,
+        bank2_.code as code2_1_2_,
+        bank2_.description as descript3_1_2_,
+        bank2_.managerId as managerI5_1_2_,
+        bank2_.status as status4_1_2_ 
+    from
+        bank bank0_ 
+    left outer join
+        Manager manager1_ 
+            on bank0_.managerId=manager1_.managerId 
+    left outer join
+        bank bank2_ 
+            on manager1_.bank_id=bank2_.bankId 
+    where
+        bank0_.bankId=?
+15:00:09,000 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+15:00:09,026 DEBUG SQL:109 - 
+    update
+        bank 
+    set
+        code=?,
+        description=?,
+        managerId=?,
+        status=? 
+    where
+        bankId=?
+15:00:09,027 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+15:00:09,027 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+15:00:09,028 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+15:00:09,028 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+15:00:09,028 TRACE BasicBinder:81 - binding parameter [5] as [BIGINT] - [1]
+15:01:00,971 DEBUG SQL:109 - 
+    alter table Manager 
+        drop 
+        foreign key FK_acfc2dhh0mkiyjw1u9fiqudjv
+15:01:01,111 DEBUG SQL:109 - 
+    alter table bank 
+        drop 
+        foreign key FK_nbmox5tvxngsqymidn810w1j7
+15:01:01,229 DEBUG SQL:109 - 
+    drop table if exists Manager
+15:01:01,382 DEBUG SQL:109 - 
+    drop table if exists bank
+15:01:01,613 DEBUG SQL:109 - 
+    create table Manager (
+        managerId bigint not null auto_increment,
+        contactNo varchar(255),
+        dob datetime,
+        name varchar(255),
+        bank_id bigint,
+        primary key (managerId)
+    )
+15:01:01,872 DEBUG SQL:109 - 
+    create table bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        description varchar(255),
+        status varchar(255),
+        managerId bigint,
+        primary key (bankId)
+    )
+15:01:02,184 DEBUG SQL:109 - 
+    alter table Manager 
+        add constraint FK_acfc2dhh0mkiyjw1u9fiqudjv 
+        foreign key (bank_id) 
+        references bank (bankId)
+15:01:03,187 DEBUG SQL:109 - 
+    alter table bank 
+        add constraint FK_nbmox5tvxngsqymidn810w1j7 
+        foreign key (managerId) 
+        references Manager (managerId)
+15:01:04,624 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, managerId, status) 
+    values
+        (?, ?, ?, ?)
+15:01:04,658 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+15:01:04,659 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+15:01:04,665 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+15:01:04,667 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+15:01:04,682 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+15:01:04,683 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+15:01:04,683 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+15:01:04,686 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Sun May 22 15:01:04 IST 2022]
+15:01:04,738 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+15:01:04,756 DEBUG SQL:109 - 
+    select
+        bank0_.bankId as bankId1_1_0_,
+        bank0_.code as code2_1_0_,
+        bank0_.description as descript3_1_0_,
+        bank0_.managerId as managerI5_1_0_,
+        bank0_.status as status4_1_0_,
+        manager1_.managerId as managerI1_0_1_,
+        manager1_.bank_id as bank_id5_0_1_,
+        manager1_.contactNo as contactN2_0_1_,
+        manager1_.dob as dob3_0_1_,
+        manager1_.name as name4_0_1_,
+        bank2_.bankId as bankId1_1_2_,
+        bank2_.code as code2_1_2_,
+        bank2_.description as descript3_1_2_,
+        bank2_.managerId as managerI5_1_2_,
+        bank2_.status as status4_1_2_ 
+    from
+        bank bank0_ 
+    left outer join
+        Manager manager1_ 
+            on bank0_.managerId=manager1_.managerId 
+    left outer join
+        bank bank2_ 
+            on manager1_.bank_id=bank2_.bankId 
+    where
+        bank0_.bankId=?
+15:01:04,763 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+15:01:04,799 DEBUG SQL:109 - 
+    update
+        bank 
+    set
+        code=?,
+        description=?,
+        managerId=?,
+        status=? 
+    where
+        bankId=?
+15:01:04,800 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+15:01:04,801 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+15:01:04,801 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+15:01:04,801 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+15:01:04,801 TRACE BasicBinder:81 - binding parameter [5] as [BIGINT] - [1]
+15:05:19,698 DEBUG SQL:109 - 
+    insert 
+    into
+        bank
+        (code, description, managerId, status) 
+    values
+        (?, ?, ?, ?)
+15:05:19,708 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+15:05:19,709 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+15:05:19,710 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+15:05:19,710 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+15:05:19,751 DEBUG SQL:109 - 
+    insert 
+    into
+        Manager
+        (bank_id, contactNo, dob, name) 
+    values
+        (?, ?, ?, ?)
+15:05:19,751 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+15:05:19,752 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [2121]
+15:05:19,753 TRACE BasicBinder:81 - binding parameter [3] as [TIMESTAMP] - [Sun May 22 15:05:19 IST 2022]
+15:05:19,815 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [hesh]
+15:05:19,835 DEBUG SQL:109 - 
+    update
+        bank 
+    set
+        code=?,
+        description=?,
+        managerId=?,
+        status=? 
+    where
+        bankId=?
+15:05:19,836 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1]
+15:05:19,836 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Aaa]
+15:05:19,837 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [2]
+15:05:19,837 TRACE BasicBinder:81 - binding parameter [4] as [VARCHAR] - [A]
+15:05:19,837 TRACE BasicBinder:81 - binding parameter [5] as [BIGINT] - [2]
+23:26:54,815 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        drop 
+        foreign key FK_1glbvdwvxeclhjaarerrytr6a
+23:26:54,898 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        drop 
+        foreign key FK_n8s2wjlkgp4x3fbb8da3iy08o
+23:26:54,901 DEBUG SQL:109 - 
+    drop table if exists Bank
+23:26:55,126 DEBUG SQL:109 - 
+    drop table if exists Bank_Branch
+23:26:55,142 DEBUG SQL:109 - 
+    drop table if exists Branch
+23:26:55,145 DEBUG SQL:109 - 
+    create table Bank (
+        bankId bigint not null auto_increment,
+        code varchar(255),
+        name varchar(255),
+        status varchar(255),
+        primary key (bankId)
+    )
+23:26:55,146 DEBUG SQL:109 - 
+    create table Bank_Branch (
+        Bank_bankId bigint not null,
+        branches_branchId bigint not null
+    )
+23:26:55,321 DEBUG SQL:109 - 
+    create table Branch (
+        branchId bigint not null auto_increment,
+        city varchar(255),
+        code varchar(255),
+        status varchar(255),
+        primary key (branchId)
+    )
+23:26:55,509 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        add constraint UK_1glbvdwvxeclhjaarerrytr6a  unique (branches_branchId)
+23:26:56,459 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        add constraint FK_1glbvdwvxeclhjaarerrytr6a 
+        foreign key (branches_branchId) 
+        references Branch (branchId)
+23:26:57,169 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        add constraint FK_n8s2wjlkgp4x3fbb8da3iy08o 
+        foreign key (Bank_bankId) 
+        references Bank (bankId)
+23:26:58,084 DEBUG SQL:109 - 
+    insert 
+    into
+        Branch
+        (city, code, status) 
+    values
+        (?, ?, ?)
+23:26:58,112 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [nuggedoda]
+23:26:58,113 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [nug]
+23:26:58,113 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [A]
+23:26:58,135 DEBUG SQL:109 - 
+    insert 
+    into
+        Branch
+        (city, code, status) 
+    values
+        (?, ?, ?)
+23:26:58,138 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [hikkaduwa]
+23:26:58,138 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hikka]
+23:26:58,141 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [A]
+23:26:58,159 DEBUG SQL:109 - 
+    insert 
+    into
+        Bank
+        (code, name, status) 
+    values
+        (?, ?, ?)
+23:26:58,160 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [com]
+23:26:58,161 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [commercial bank]
+23:26:58,161 TRACE BasicBinder:81 - binding parameter [3] as [VARCHAR] - [A]
+23:27:46,587 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        drop 
+        foreign key FK_1glbvdwvxeclhjaarerrytr6a
+23:28:16,614 DEBUG SQL:109 - 
+    alter table Bank_Branch 
+        drop 
+        foreign key FK_1glbvdwvxeclhjaarerrytr6a
+09:33:53,452 DEBUG SQL:109 - 
+    insert 
+    into
+        Items
+        (itemName) 
+    values
+        (?)
+09:33:53,467 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [pasta]
+09:33:53,605 DEBUG SQL:109 - 
+    insert 
+    into
+        Items
+        (itemName) 
+    values
+        (?)
+09:33:53,608 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [rice]
+09:33:53,628 DEBUG SQL:109 - 
+    insert 
+    into
+        Cart
+        (name, price) 
+    values
+        (?, ?)
+09:33:53,629 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Heshan's]
+09:33:53,629 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [100]
+09:33:53,741 DEBUG SQL:109 - 
+    insert 
+    into
+        Cart_Items
+        (Cart_cart_id, items_itemId) 
+    values
+        (?, ?)
+09:33:53,742 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+09:33:53,743 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+09:33:53,748 DEBUG SQL:109 - 
+    insert 
+    into
+        Cart_Items
+        (Cart_cart_id, items_itemId) 
+    values
+        (?, ?)
+09:33:53,751 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+09:33:53,753 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+17:20:59,741 DEBUG SQL:109 - 
+    insert 
+    into
+        Items
+        (itemName) 
+    values
+        (?)
+17:20:59,766 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [pasta]
+17:20:59,787 DEBUG SQL:109 - 
+    insert 
+    into
+        Items
+        (itemName) 
+    values
+        (?)
+17:20:59,788 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [rice]
+17:20:59,799 DEBUG SQL:109 - 
+    insert 
+    into
+        Cart
+        (name, price) 
+    values
+        (?, ?)
+17:20:59,801 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [Heshan's]
+17:20:59,801 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [100]
+17:20:59,921 DEBUG SQL:109 - 
+    insert 
+    into
+        Cart_Items
+        (Cart_cart_id, items_itemId) 
+    values
+        (?, ?)
+17:20:59,928 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+17:20:59,928 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [3]
+17:20:59,930 DEBUG SQL:109 - 
+    insert 
+    into
+        Cart_Items
+        (Cart_cart_id, items_itemId) 
+    values
+        (?, ?)
+17:20:59,931 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+17:20:59,931 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [4]
+20:35:56,360 DEBUG SQL:109 - 
+    alter table Author_Bok 
+        drop 
+        foreign key FK_m9vcexq6xlxkfqshtcm2oac7c
+20:35:56,393 DEBUG SQL:109 - 
+    alter table Author_Bok 
+        drop 
+        foreign key FK_j4bwc8r5kplrc4a4v4o9ug787
+20:35:56,397 DEBUG SQL:109 - 
+    drop table if exists Author
+20:35:56,444 DEBUG SQL:109 - 
+    drop table if exists Author_Bok
+20:35:56,447 DEBUG SQL:109 - 
+    drop table if exists Bok
+20:35:56,451 DEBUG SQL:109 - 
+    create table Author (
+        authorId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (authorId)
+    )
+20:35:56,990 DEBUG SQL:109 - 
+    create table Author_Bok (
+        authors_authorId bigint not null,
+        book_bokId bigint not null
+    )
+20:35:57,681 DEBUG SQL:109 - 
+    create table Bok (
+        bokId bigint not null auto_increment,
+        isbn varchar(255),
+        name varchar(255),
+        primary key (bokId)
+    )
+20:35:58,065 DEBUG SQL:109 - 
+    alter table Author_Bok 
+        add constraint FK_m9vcexq6xlxkfqshtcm2oac7c 
+        foreign key (book_bokId) 
+        references Bok (bokId)
+20:35:58,879 DEBUG SQL:109 - 
+    alter table Author_Bok 
+        add constraint FK_j4bwc8r5kplrc4a4v4o9ug787 
+        foreign key (authors_authorId) 
+        references Author (authorId)
+20:35:59,887 DEBUG SQL:109 - 
+    insert 
+    into
+        Bok
+        (isbn, name) 
+    values
+        (?, ?)
+20:35:59,901 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [ss]
+20:35:59,902 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Java]
+20:35:59,911 DEBUG SQL:109 - 
+    insert 
+    into
+        Bok
+        (isbn, name) 
+    values
+        (?, ?)
+20:35:59,912 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [ss3]
+20:35:59,912 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Java3]
+20:35:59,916 DEBUG SQL:109 - 
+    insert 
+    into
+        Bok
+        (isbn, name) 
+    values
+        (?, ?)
+20:35:59,917 TRACE BasicBinder:69 - binding parameter [1] as [VARCHAR] - [null]
+20:35:59,917 TRACE BasicBinder:69 - binding parameter [2] as [VARCHAR] - [null]
+20:36:00,004 DEBUG SQL:109 - 
+    insert 
+    into
+        Author
+        (contactNo, name) 
+    values
+        (?, ?)
+20:36:00,008 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12121]
+20:36:00,009 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [ge]
+20:36:00,015 DEBUG SQL:109 - 
+    insert 
+    into
+        Author
+        (contactNo, name) 
+    values
+        (?, ?)
+20:36:00,016 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [fd]
+20:36:00,017 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [fgffg]
+20:36:00,040 DEBUG SQL:109 - 
+    insert 
+    into
+        Author_Bok
+        (authors_authorId, book_bokId) 
+    values
+        (?, ?)
+20:36:00,042 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+20:36:00,042 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+20:36:00,102 DEBUG SQL:109 - 
+    insert 
+    into
+        Author_Bok
+        (authors_authorId, book_bokId) 
+    values
+        (?, ?)
+20:36:00,104 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+20:36:00,105 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+20:36:00,107 DEBUG SQL:109 - 
+    insert 
+    into
+        Author_Bok
+        (authors_authorId, book_bokId) 
+    values
+        (?, ?)
+20:36:00,108 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+20:36:00,109 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [3]
+04:57:32,394 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+04:57:32,418 DEBUG SQL:109 - 
+    drop table if exists Driver
+04:57:32,471 DEBUG SQL:109 - 
+    drop table if exists Van
+04:57:32,473 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+04:57:32,727 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+04:57:33,410 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+04:57:35,606 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+04:57:35,647 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [123333]
+04:57:35,649 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [vesel]
+04:57:35,667 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+04:57:35,669 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+04:57:35,670 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+04:57:35,671 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+04:57:35,676 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+04:57:35,677 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11112]
+04:57:35,678 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs2]
+04:57:35,680 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+04:57:35,702 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+04:57:35,704 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+04:57:35,705 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+04:57:35,705 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:05:38,051 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:05:38,240 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:05:38,408 DEBUG SQL:109 - 
+    drop table if exists Van
+05:05:38,558 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:05:39,162 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:05:39,382 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:05:40,355 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+05:05:40,369 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [123333]
+05:05:40,369 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [vesel]
+05:05:40,384 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:05:40,385 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:05:40,386 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:05:40,388 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:05:40,394 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:05:40,395 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11112]
+05:05:40,396 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs2]
+05:05:40,398 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:05:40,400 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:05:40,402 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:05:40,402 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:05:40,403 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:07:27,297 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:07:27,515 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:07:27,728 DEBUG SQL:109 - 
+    drop table if exists Van
+05:07:28,174 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:07:28,476 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:07:28,685 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:07:29,799 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+05:07:29,822 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [123333]
+05:07:29,823 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [vesel]
+05:07:29,850 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:07:29,851 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:07:29,852 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:07:29,854 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:07:29,890 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:07:29,890 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11112]
+05:07:29,891 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs2]
+05:07:29,893 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:07:29,896 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:07:29,897 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:07:29,898 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:07:29,898 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:07:30,347 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:07:30,348 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11114]
+05:07:30,349 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs4]
+05:07:30,350 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:12:06,012 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:12:06,340 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:12:06,603 DEBUG SQL:109 - 
+    drop table if exists Van
+05:12:06,773 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:12:06,993 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:12:07,568 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:12:08,443 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+05:12:08,472 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [123333]
+05:12:08,475 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [vesel]
+05:12:08,505 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:08,507 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:12:08,511 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:12:08,513 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:12:08,519 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:08,520 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11112]
+05:12:08,520 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs2]
+05:12:08,522 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:12:08,523 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:08,524 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:12:08,524 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:12:08,524 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:12:09,301 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:09,302 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11114]
+05:12:09,302 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs4]
+05:12:09,302 TRACE BasicBinder:69 - binding parameter [3] as [BIGINT] - [null]
+05:12:30,877 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:12:31,074 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:12:31,287 DEBUG SQL:109 - 
+    drop table if exists Van
+05:12:31,501 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:12:32,110 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:12:32,347 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:12:33,648 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+05:12:33,666 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [123333]
+05:12:33,666 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [vesel]
+05:12:33,683 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:33,685 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:12:33,686 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:12:33,688 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:12:33,697 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:33,699 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11112]
+05:12:33,699 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs2]
+05:12:33,702 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:12:33,704 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:33,709 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:12:33,709 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:12:33,710 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:12:34,757 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:12:34,759 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11114]
+05:12:34,759 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs4]
+05:12:34,759 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:14:20,861 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:14:21,000 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:14:21,153 DEBUG SQL:109 - 
+    drop table if exists Van
+05:14:21,361 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:14:21,724 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:14:22,032 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:15:00,761 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:15:00,951 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:15:01,137 DEBUG SQL:109 - 
+    drop table if exists Van
+05:15:01,444 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:15:01,686 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:15:01,950 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:15:32,001 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:15:32,101 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:15:32,253 DEBUG SQL:109 - 
+    drop table if exists Van
+05:15:32,465 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:15:32,748 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:15:33,122 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:15:34,309 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+05:15:34,327 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [123333]
+05:15:34,327 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [vesel]
+05:15:34,344 DEBUG SQL:109 - 
+    insert 
+    into
+        Van
+        (contactNo, name) 
+    values
+        (?, ?)
+05:15:34,345 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11111]
+05:15:34,346 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [prius]
+05:15:34,348 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:15:34,349 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:15:34,350 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:15:34,351 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:15:34,467 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:15:34,469 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11112]
+05:15:34,469 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs2]
+05:15:34,470 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [2]
+05:15:34,472 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:15:34,473 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [1111]
+05:15:34,474 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs]
+05:15:34,474 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [1]
+05:15:34,553 DEBUG SQL:109 - 
+    insert 
+    into
+        Driver
+        (contactNo, name, vanid) 
+    values
+        (?, ?, ?)
+05:15:34,555 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [11114]
+05:15:34,555 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [Hehs4]
+05:15:34,556 TRACE BasicBinder:81 - binding parameter [3] as [BIGINT] - [2]
+05:20:56,502 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:20:56,743 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:20:56,953 DEBUG SQL:109 - 
+    drop table if exists Van
+05:20:57,157 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:20:57,501 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:20:57,787 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:21:32,455 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:21:32,637 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:21:32,841 DEBUG SQL:109 - 
+    drop table if exists Van
+05:21:32,994 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:21:33,347 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:21:33,578 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:22:44,843 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:22:44,944 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:22:45,141 DEBUG SQL:109 - 
+    drop table if exists Van
+05:22:45,361 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:22:45,657 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:22:45,943 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:23:38,055 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:23:38,242 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:23:38,394 DEBUG SQL:109 - 
+    drop table if exists Van
+05:23:38,648 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:23:38,889 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:23:39,164 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:24:36,337 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:24:36,532 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:24:36,723 DEBUG SQL:109 - 
+    drop table if exists Van
+05:24:36,914 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:24:37,157 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:24:37,498 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:26:30,960 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:26:31,109 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:26:31,259 DEBUG SQL:109 - 
+    drop table if exists Van
+05:26:31,511 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:26:31,821 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:26:32,096 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:27:27,493 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:27:27,641 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:27:27,791 DEBUG SQL:109 - 
+    drop table if exists Van
+05:27:28,044 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:27:28,362 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:27:28,648 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:29:01,863 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:29:02,007 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:29:02,159 DEBUG SQL:109 - 
+    drop table if exists Van
+05:29:02,345 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:29:02,565 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:29:02,818 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:29:24,845 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:29:24,965 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:29:25,132 DEBUG SQL:109 - 
+    drop table if exists Van
+05:29:25,437 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:29:26,283 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:29:26,764 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:49:02,363 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:49:02,507 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:49:02,695 DEBUG SQL:109 - 
+    drop table if exists Van
+05:49:02,872 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:49:03,135 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:49:03,709 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:49:36,574 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:49:36,739 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:49:36,914 DEBUG SQL:109 - 
+    drop table if exists Van
+05:49:37,059 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:49:37,245 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:49:37,494 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+05:55:55,136 DEBUG SQL:109 - 
+    alter table Driver 
+        drop 
+        foreign key FK_gh8u3wdi2ch2q6yroj9j1cfnn
+05:55:55,287 DEBUG SQL:109 - 
+    drop table if exists Driver
+05:55:55,512 DEBUG SQL:109 - 
+    drop table if exists Van
+05:55:55,741 DEBUG SQL:109 - 
+    create table Driver (
+        Id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        vanid bigint,
+        primary key (Id)
+    )
+05:55:56,183 DEBUG SQL:109 - 
+    create table Van (
+        vanId bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (vanId)
+    )
+05:55:56,459 DEBUG SQL:109 - 
+    alter table Driver 
+        add constraint FK_gh8u3wdi2ch2q6yroj9j1cfnn 
+        foreign key (vanid) 
+        references Van (vanId)
+06:00:58,512 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        drop 
+        foreign key FK_d8q9lcih5g6u8s8o0eetx5e7k
+06:00:58,535 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        drop 
+        foreign key FK_7d8g88f6g9fysjkygdytkv1pb
+06:00:58,537 DEBUG SQL:109 - 
+    drop table if exists Jeep
+06:00:58,559 DEBUG SQL:109 - 
+    drop table if exists Jeep_Owner
+06:00:58,561 DEBUG SQL:109 - 
+    drop table if exists Owner
+06:00:58,563 DEBUG SQL:109 - 
+    create table Jeep (
+        jeepId bigint not null auto_increment,
+        date datetime,
+        model varchar(255),
+        primary key (jeepId)
+    )
+06:00:58,926 DEBUG SQL:109 - 
+    create table Jeep_Owner (
+        jeep_jeepId bigint not null,
+        owner_id bigint not null
+    )
+06:00:59,179 DEBUG SQL:109 - 
+    create table Owner (
+        id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (id)
+    )
+06:00:59,841 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        add constraint FK_d8q9lcih5g6u8s8o0eetx5e7k 
+        foreign key (owner_id) 
+        references Owner (id)
+06:01:00,860 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        add constraint FK_7d8g88f6g9fysjkygdytkv1pb 
+        foreign key (jeep_jeepId) 
+        references Jeep (jeepId)
+06:01:02,731 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:01:02,774 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:01:02 IST 2022]
+06:01:02,852 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep1]
+06:01:02,957 DEBUG SQL:109 - 
+    insert 
+    into
+        Owner
+        (contactNo, name) 
+    values
+        (?, ?)
+06:01:02,958 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12111]
+06:01:02,959 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hesha]
+06:01:03,201 DEBUG SQL:109 - 
+    insert 
+    into
+        Owner
+        (contactNo, name) 
+    values
+        (?, ?)
+06:01:03,202 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12111]
+06:01:03,203 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hesha2]
+06:01:03,215 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:01:03,216 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+06:01:03,216 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:01:03,218 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:01:03,219 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+06:01:03,219 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+06:02:48,901 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        drop 
+        foreign key FK_d8q9lcih5g6u8s8o0eetx5e7k
+06:02:48,998 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        drop 
+        foreign key FK_7d8g88f6g9fysjkygdytkv1pb
+06:02:49,072 DEBUG SQL:109 - 
+    drop table if exists Jeep
+06:02:49,249 DEBUG SQL:109 - 
+    drop table if exists Jeep_Owner
+06:02:49,580 DEBUG SQL:109 - 
+    drop table if exists Owner
+06:02:49,896 DEBUG SQL:109 - 
+    create table Jeep (
+        jeepId bigint not null auto_increment,
+        date datetime,
+        model varchar(255),
+        primary key (jeepId)
+    )
+06:02:50,193 DEBUG SQL:109 - 
+    create table Jeep_Owner (
+        jeep_jeepId bigint not null,
+        owner_id bigint not null
+    )
+06:02:50,518 DEBUG SQL:109 - 
+    create table Owner (
+        id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (id)
+    )
+06:02:50,940 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        add constraint FK_d8q9lcih5g6u8s8o0eetx5e7k 
+        foreign key (owner_id) 
+        references Owner (id)
+06:02:51,871 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        add constraint FK_7d8g88f6g9fysjkygdytkv1pb 
+        foreign key (jeep_jeepId) 
+        references Jeep (jeepId)
+06:02:52,835 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:02:52,855 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:02:52 IST 2022]
+06:02:52,910 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep1]
+06:02:53,096 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:02:53,098 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:02:52 IST 2022]
+06:02:53,098 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep2]
+06:02:53,105 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:02:53,106 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:02:52 IST 2022]
+06:02:53,107 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep1]
+06:02:53,181 DEBUG SQL:109 - 
+    insert 
+    into
+        Owner
+        (contactNo, name) 
+    values
+        (?, ?)
+06:02:53,183 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12111]
+06:02:53,184 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hesha]
+06:02:53,189 DEBUG SQL:109 - 
+    insert 
+    into
+        Owner
+        (contactNo, name) 
+    values
+        (?, ?)
+06:02:53,190 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12111]
+06:02:53,191 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hesha2]
+06:02:53,212 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:02:53,214 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+06:02:53,215 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:02:53,270 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:02:53,271 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+06:02:53,271 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+06:02:53,272 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:02:53,273 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+06:02:53,274 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:02:53,360 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:02:53,362 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+06:02:53,363 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+06:02:53,365 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:02:53,365 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+06:02:53,366 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:02:53,368 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:02:53,369 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+06:02:53,369 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+06:03:04,419 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        drop 
+        foreign key FK_d8q9lcih5g6u8s8o0eetx5e7k
+06:03:04,534 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        drop 
+        foreign key FK_7d8g88f6g9fysjkygdytkv1pb
+06:03:04,642 DEBUG SQL:109 - 
+    drop table if exists Jeep
+06:03:04,834 DEBUG SQL:109 - 
+    drop table if exists Jeep_Owner
+06:03:04,996 DEBUG SQL:109 - 
+    drop table if exists Owner
+06:03:05,286 DEBUG SQL:109 - 
+    create table Jeep (
+        jeepId bigint not null auto_increment,
+        date datetime,
+        model varchar(255),
+        primary key (jeepId)
+    )
+06:03:05,593 DEBUG SQL:109 - 
+    create table Jeep_Owner (
+        jeep_jeepId bigint not null,
+        owner_id bigint not null
+    )
+06:03:05,938 DEBUG SQL:109 - 
+    create table Owner (
+        id bigint not null auto_increment,
+        contactNo varchar(255),
+        name varchar(255),
+        primary key (id)
+    )
+06:03:06,516 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        add constraint FK_d8q9lcih5g6u8s8o0eetx5e7k 
+        foreign key (owner_id) 
+        references Owner (id)
+06:03:07,674 DEBUG SQL:109 - 
+    alter table Jeep_Owner 
+        add constraint FK_7d8g88f6g9fysjkygdytkv1pb 
+        foreign key (jeep_jeepId) 
+        references Jeep (jeepId)
+06:03:08,646 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:03:08,662 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:03:08 IST 2022]
+06:03:08,699 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep1]
+06:03:08,764 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:03:08,766 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:03:08 IST 2022]
+06:03:08,766 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep2]
+06:03:08,775 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep
+        (date, model) 
+    values
+        (?, ?)
+06:03:08,776 TRACE BasicBinder:81 - binding parameter [1] as [TIMESTAMP] - [Wed May 25 06:03:08 IST 2022]
+06:03:08,776 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [jeep1]
+06:03:09,050 DEBUG SQL:109 - 
+    insert 
+    into
+        Owner
+        (contactNo, name) 
+    values
+        (?, ?)
+06:03:09,050 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12111]
+06:03:09,051 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hesha]
+06:03:09,387 DEBUG SQL:109 - 
+    insert 
+    into
+        Owner
+        (contactNo, name) 
+    values
+        (?, ?)
+06:03:09,387 TRACE BasicBinder:81 - binding parameter [1] as [VARCHAR] - [12111]
+06:03:09,388 TRACE BasicBinder:81 - binding parameter [2] as [VARCHAR] - [hesha2]
+06:03:09,405 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:03:09,406 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+06:03:09,406 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:03:09,656 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:03:09,658 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [1]
+06:03:09,659 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+06:03:09,660 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:03:09,661 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+06:03:09,661 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:03:09,974 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:03:09,975 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [2]
+06:03:09,976 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
+06:03:09,977 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:03:09,978 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+06:03:09,978 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [1]
+06:03:09,978 DEBUG SQL:109 - 
+    insert 
+    into
+        Jeep_Owner
+        (jeep_jeepId, owner_id) 
+    values
+        (?, ?)
+06:03:09,979 TRACE BasicBinder:81 - binding parameter [1] as [BIGINT] - [3]
+06:03:09,979 TRACE BasicBinder:81 - binding parameter [2] as [BIGINT] - [2]
